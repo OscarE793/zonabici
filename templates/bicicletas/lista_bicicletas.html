@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Mis Bicicletas</h2>
+<a href="{% url 'bicicletas:crear_bicicleta' %}">Registrar nueva bicicleta</a>
+<ul>
+    {% for bici in bicicletas %}
+        <li>{{ bici.marca }} - {{ bici.color }} - {{ bici.serial }}</li>
+    {% empty %}
+        <li>No tienes bicicletas registradas.</li>
+    {% endfor %}
+</ul>
+{% endblock %}

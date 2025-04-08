@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Zona de Bicicletas</title>
+    <link href="{% static 'css/dist/styles.css' %}" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    
+
+</head>
+<body>
+    {% if user.is_authenticated %}
+        <p>Hola, {{ user.username }} | <a href="{% url 'logout' %}">Cerrar sesión</a></p>
+    {% else %}
+        <p><a href="{% url 'login' %}">Iniciar sesión</a></p>
+    {% endif %}
+    <hr>
+    {% block content %}{% endblock %}
+</body>
+</html>

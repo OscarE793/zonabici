@@ -1,0 +1,18 @@
+input[type="submit"] {
+    background-color: #007c88 !important;
+    border-color: #007c88 !important;
+    color: white !important;
+}
+
+/* Ajustar logo en login */
+.login-logo {
+    max-width: 250px !important;
+    height: auto !important;
+    margin: 0 auto;
+}
+
+/* Ajustar logo general del admin */
+.brand-link img {
+    max-height: 40px;
+    width: auto;
+}

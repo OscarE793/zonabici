@@ -1,0 +1,77 @@
+/* Fondo general del sitio admin */
+body {
+    background-color: #F9F9F9;
+    color: #333333;
+}
+
+/* Encabezado del panel (barra superior) */
+.navbar, .navbar-brand {
+    background-color: #002D62 !important;
+    color: white !important;
+}
+
+/* Títulos del panel lateral */
+.sidebar {
+    background-color: #002D62 !important;
+    color: white;
+}
+
+.sidebar a {
+    color: #ffffff !important;
+}
+
+.sidebar a:hover {
+    background-color: #004080 !important;
+}
+
+/* Botones */
+.btn-primary {
+    background-color: #4CAF50;
+    border-color: #4CAF50;
+}
+
+.btn-primary:hover {
+    background-color: #45a049;
+    border-color: #45a049;
+}
+
+/* Enlaces activos */
+.nav-item.active > a,
+.sidebar .nav-link.active {
+    background-color: #FFA500 !important;
+    color: #ffffff !important;
+}
+
+/* Títulos en formularios o páginas */
+.content h1, .content h2, .content h3 {
+    color: #002D62;
+}
+
+/* Tablas */
+table.table th {
+    background-color: #002D62;
+    color: #ffffff;
+}
+
+/* Cards y boxes */
+.card, .module, .box {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #ffffff;
+}
+
+/* Footer */
+.footer {
+    background-color: #002D62;
+    color: #ffffff;
+}
+.login-logo img {
+    max-height: 300px;
+    width: auto;
+}
+
+.site_icon img {
+    max-height: 50px;
+    width: auto;
+}
+

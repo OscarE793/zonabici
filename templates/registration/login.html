@@ -1,0 +1,86 @@
+{% extends "admin/base_site.html" %}
+{% load static %}
+
+{% block title %}Iniciar sesión | Zona Bici{% endblock %}
+
+{% block extrastyle %}
+  <style>
+    .login-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f9f9f9;
+      flex-direction: column;
+    }
+
+    .login-logo {
+      max-height: 150px;
+      width: auto;
+      margin-bottom: 20px;
+    }
+
+    .login-form {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+      min-width: 300px;
+    }
+
+    .login-form h1 {
+      font-size: 18px;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    .login-form .submit-row {
+      text-align: center;
+    }
+
+    .form-row input {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 15px;
+    }
+
+    .errornote, .errorlist {
+      color: red;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+  </style>
+{% endblock %}
+
+{% block content %}
+  <div class="login-container">
+    <img src="{% static 'img/logo_zonabici.png' %}" alt="Zona Bici" class="login-logo">
+
+    <form method="post" action="{% url 'admin:login' %}" class="login-form">
+      {% csrf_token %}
+      {% if form.errors %}
+        <p class="errornote">Tu usuario y contraseña no coinciden. Intenta de nuevo.</p>
+      {% endif %}
+
+      <h1>Bienvenido al panel de ZonaBici</h1>
+
+      <div class="form-row">
+        {{ form.username.label_tag }}<br>
+        {{ form.username }}
+      </div>
+
+      <div class="form-row">
+        {{ form.password.label_tag }}<br>
+        {{ form.password }}
+      </div>
+
+      <div class="submit-row">
+        <input type="submit" value="Ingresar" class="default">
+      </div>
+
+      {% if next %}
+        <input type="hidden" name="next" value="{{ next }}">
+      {% endif %}
+    </form>
+  </div>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends "admin/base.html" %}
+{% load static %}
+
+{% block extrastyle %}
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+{% endblock %}
+
+{% block branding %}
+  <a class="navbar-brand" href="{% url 'admin:index' %}" style="display: flex; align-items: center; gap: 8px;">
+    <img src="{% static 'img/logo_zonabici.png' %}" alt="Zona Bici" style="height: 40px;">
+  </a>
+{% endblock %}
+
+{% block nav-global %}{% endblock %}

@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Historial de Movimientos</h2>
+<ul>
+    {% for movimiento in movimientos %}
+        <li>{{ movimiento.fecha_hora|date:"d/m/Y H:i" }} - {{ movimiento.bicicleta }} - {{ movimiento.tipo_movimiento }}</li>
+    {% empty %}
+        <li>No hay movimientos registrados.</li>
+    {% endfor %}
+</ul>
+<a href="{% url 'registro:registrar' %}">Registrar nuevo movimiento</a>
+{% endblock %}
